@@ -1,42 +1,40 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <title>Java Script Quiz</title>
 </head>
 <body>
-    <!-- To Start the Quiz -->
-    <div class="start-btn">
-        <button>Start Quiz</button>
+    <header>
+        <button class="high-scores" id="scoreboard">View High Scores</button>
+        <ol id="top-scores">
+            <li></li>
+        </ol>
+
+    </header>
+    <div class="container" id="questions">
+        <div id="timer" class="timer"></div>
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="option-buttons" class="btn-grid">
+
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
     </div>
-
-    <div class="quiz-box">
-        <header>
-            <div class="Timer">
-                <div class="time-remaining-txt">Time Remaining:</div>
-                <div class="timer-sec">15</div>
-            </div>
-        </header>
-        <section>
-            <div class="que-text">
-                <!-- JS will insert question text here -->
-            </div>
-            <div class="que-options">
-                <!-- Question options will be inserted here -->
-            </div>
-        </section>
-        <footer>
-            <div class="result-box">
-                <button class="next-btn">Next Question</button>
-            </div>
-        </footer>
+    <div class="container hide" id="summary">
+        <input type="text" id="initials"/>
+        <div id="final-score" class="score"></div>
+        <button type="submit" id="submit-score">Save Score</button>
     </div>
-
-
-
-    <script src="./assets/js/questions.js"></script>
+    
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

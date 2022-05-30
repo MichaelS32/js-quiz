@@ -9,13 +9,7 @@
     <title>Java Script Quiz</title>
 </head>
 <body>
-    <header>
-        <button class="high-scores" id="scoreboard">View High Scores</button>
-        <ol id="top-scores">
-            <li></li>
-        </ol>
-
-    </header>
+   
     <div class="container" id="questions">
         <div id="timer" class="timer"></div>
         <div id="question-container" class="hide">
@@ -32,7 +26,13 @@
     <div class="container hide" id="summary">
         <input type="text" id="initials"/>
         <div id="final-score" class="score"></div>
-        <button type="submit" id="submit-score">Save Score</button>
+        <button type="submit" onclick="submit()" id="submit-score">Save Score</button>
+
+        <div>
+            <ol id="top-scores">
+            
+            </ol>
+        </div>
     </div>
     
     <script src="./assets/js/script.js"></script>

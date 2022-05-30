@@ -22,7 +22,6 @@ nextButton.addEventListener('click', () => {
 })
 
 function startGame() {
-    
     timer = setInterval(function() {
         date--;
         timeElement.innerHTML = date
@@ -98,13 +97,15 @@ function selectAnswer(e) {
 }
 
 function endOfGame() {
-    clearInterval(timer);
+    
     if(shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide');
     }  else {
         document.getElementById('final-score').innerHTML = date;
         summary.classList.remove('hide');
         questionsElement.classList.add('hide');
+
+        clearInterval(timer);
         
 
     }
@@ -113,16 +114,26 @@ function endOfGame() {
 
 function submit() {
     
-    topScores = localStorage.getItem('high-scores');
-    if(!topScores) {
-        topScores = [];
-    }
-    topScores.push(document.getElementById('initials').value + date);
-    topScores.sort((a, b) => a + b)
+    topScores = JSON.parse(localStorage.getItem('scores')) || [];
+    console.log(localStorage)
+    console.log(topScores)
+    topScores.push({
+        "initial": document.getElementById('initials').value,
+        "score": date
+    });
+    topScores.sort((a, b) => a.score + b.score)
     if(topScores.length > 5) {
         topScores.pop();
     }
-    localStorage.setItem('high-scores');
+    localStorage.setItem('scores', JSON.stringify(topScores));
+    let htmlScores = [];
+    topScores.forEach((score) => {
+        htmlScores.push(
+            '<li>' + score.initial + ' ' + score.score + '</li>'
+        )
+    })
+
+    document.getElementById('top-scores').innerHTML = htmlScores;
     console.log(localStorage);
 
 }

@@ -5,7 +5,7 @@ This quiz was designed to test knowledge in javascript and post high scores to l
 
 ## Links
 
-GitHub pages url: https://michaels32.github.io/Password-Generator/ 
+GitHub pages url: https://michaels32.github.io/js-quiz/ 
 GitHub repository url: https://github.com/MichaelS32/js-quiz
 
 ## License
